@@ -1,25 +1,27 @@
 # <p align="center">File</p>
-
 ## Aim:
-To write a C# program to store the student details in file using structure concept.
+To Develop a C# program to get the values from the students such as name, age, department, and semester_percentage using the structure and store it in a file in a specific path using the file stream concept.
+
 ## Algorithm:
-### Step 1:
+### step 1: 
+Create a structure of student details.
+
+### step 2:
 Create a file using FileStream.
 
-### Step 2:
-Create a structure for student details.
+### step 3:
+Get the number of students and their details from the user.
 
-### Step 3:
-Get the number of students and their details from user.
+### step 4:
+Create a function to write the details of the students in the created file.
 
-### Step 4:
-Define a function to write the details of student into the created file.
+### step 5:
+Pass the details of the student to the function.
 
-### Step 5:
-Pass the details of student to the function.
-
-### Step 6:
+### step 6:
 File has been created and written with student details.
+
+
 ## Program:
 ```c#
 using System;
@@ -37,17 +39,17 @@ struct student
 };
 public class program
 {
-    static void write(string name, int age, string dept, float percent, int i)
+    static void write(string name,int age,string dept,float percent,int i)
     {
-        FileStream fs = new FileStream("file.txt", FileMode.Append, FileAccess.Write);
-        StreamWriter sw = new StreamWriter(fs);
-        sw.WriteLine("name of the student-{0}:{1}", i + 1, name);
-        sw.WriteLine("age of the student-{0}:{1}", i + 1, age);
-        sw.WriteLine("dept of the student-{0}:{1}", i + 1, dept);
-        sw.WriteLine("semester percentage of the student-{0}:{1}", i + 1, percent);
-        sw.WriteLine();
-        sw.Close();
-        fs.Close();
+            FileStream fs = new FileStream("file.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine("name of the student-{0}:{1}", i + 1, name);
+            sw.WriteLine("age of the student-{0}:{1}", i + 1, age);
+            sw.WriteLine("dept of the student-{0}:{1}", i + 1, dept);
+            sw.WriteLine("semester percentage of the student-{0}:{1}", i + 1, percent);
+            sw.WriteLine();
+            sw.Close();
+            fs.Close();
     }
     public static void Main(string[] args)
     {
@@ -66,7 +68,7 @@ public class program
             s[i].dept = Console.ReadLine();
             Console.Write("Enter the semester percentage of the student-{0}:", i + 1);
             s[i].sem_percent = float.Parse(Console.ReadLine());
-            write(s[i].name, s[i].age, s[i].dept, s[i].sem_percent, i);
+            write(s[i].name, s[i].age, s[i].dept, s[i].sem_percent,i);
             Console.WriteLine();
         }
         Console.ReadKey();
@@ -74,6 +76,7 @@ public class program
 }
 ```
 ## Output:
-![image](https://github.com/ShafeeqAhamedS/Exp_10_File/assets/93427237/4746674d-a1f1-4eed-83fe-409833cc5e81)
+![image](https://user-images.githubusercontent.com/75235488/173843110-700f9e68-94ef-4648-8c33-84e348599af1.png)
+
 ## Result:
-Thus a C# program to store the student details in file using structure concept is implemented successfully.
+C# program to get student details using structure and storing it in a file in a specific path using the file stream concept is implemented successfully.
